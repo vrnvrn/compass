@@ -1,0 +1,23 @@
+{
+  "name": "compass",
+  "version": "1.0.0",
+  "description": "Lightweight MVP for user testing at ETHGlobal.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.15.29",
+    "@types/react": "^19.1.6",
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "^5.8.3"
+  }
+}
