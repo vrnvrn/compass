@@ -14,21 +14,26 @@ export async function POST(req: Request) {
     const sponsorContext = JSON.stringify(sponsors, null, 2)
   
     const prompt = `
-  You are an expert hackathon assistant. Based on these sponsor tracks and themes:
-  
-  ${sponsorContext}
-  
-  And the following local community problems:
-  
-  ${problems.map((p: any, i: number) => `${i + 1}. "${p.title}" - ${p.description}`).join('\n')}
-  
-  Suggest 1 creative, feasible hackathon project idea that aligns with 1-3 sponsors to help solve one of these problems.
-  
-  Markdown Format:
-  🚀 Project Title
-  🔍 Sponsor Track
-  🧩 Idea (1–2 sentence description)
-    `
+You are an expert hackathon assistant. Based on these sponsor tracks and themes:
+
+${sponsorContext}
+
+And the following local community problems:
+
+${problems.map((p: any, i: number) => `${i + 1}. "${p.title}" - ${p.description}`).join('\n')}
+
+Suggest 1 creative, feasible hackathon project idea that aligns with 1-3 sponsors to help solve one of these problems.
+
+Format your response in markdown like this:
+
+# 🚀 [Project Title]
+
+## 🔍 Sponsor Track
+[Sponsor names and tracks]
+
+## 💡 Project Idea
+[2-3 sentence description of the project, its technical components, and how it helps solve the problem]
+`
   
     const response = await openai.chat.completions.create({
       model: 'gpt-4',
@@ -37,10 +42,7 @@ export async function POST(req: Request) {
     })
   
     const content = response.choices[0].message.content || ''
-    const suggestions = content
-      .split('\n🚀')
-      .filter(Boolean)
-      .map(s => '🚀' + s.trim())
+    const suggestions = [content.trim()]
   
     return NextResponse.json({ suggestions })
   }
