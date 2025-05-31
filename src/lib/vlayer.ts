@@ -1,6 +1,6 @@
-/* import { createProverClient } from '@vlayer-xyz/sdk'
+// src/lib/vlayer.ts
+import { createWebClient } from '@vlayer/web'
 
-export const prover = createProverClient({
-  clientId: 'demo', // or your project ID from Vlayer when you get one
-  sandbox: true,    // true = dev mode
-}) */
+export const prover = createWebClient({
+  token: process.env.NEXT_PUBLIC_VLAYER_API_TOKEN!,
+})
