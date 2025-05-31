@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B600%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .card-shadow {
+      box-shadow: 0px 2px 4px -2px rgba(16, 24, 40, 0.06), 0px 4px 8px -2px rgba(16, 24, 40, 0.10);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-6 px-4 sm:px-6 py-8">
+<aside class="layout-content-container flex flex-col gap-6">
+<div>
+<h2 class="text-xl font-semibold text-slate-800 mb-4 px-1">Local Issue Explorer</h2>
+<div class="space-y-4">
+<label class="flex flex-col">
+<span class="text-sm font-medium text-slate-600 mb-1">Scope</span>
+<select class="form-select w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-700 focus:border-blue-500 focus:ring-blue-500 shadow-sm transition duration-150 ease-in-out">
+<option value="one">Prague, CZ</option>
+<option value="two">North America</option>
+<option value="three">Europe</option>
+</select>
+</label>
+<label class="flex flex-col">
+<span class="text-sm font-medium text-slate-600 mb-1">Issue Space</span>
+<select class="form-select w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-700 focus:border-blue-500 focus:ring-blue-500 shadow-sm transition duration-150 ease-in-out">
+<option value="one">All Issues</option>
+<option value="two">Urban</option>
+<option value="three">Rural</option>
+</select>
+</label>
+<label class="flex flex-col">
+<span class="text-sm font-medium text-slate-600 mb-1">Urgency</span>
+<select class="form-select w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-700 focus:border-blue-500 focus:ring-blue-500 shadow-sm transition duration-150 ease-in-out">
+<option value="one">All Levels</option>
+<option value="two">High</option>
+<option value="three">Medium</option>
+</select>
+</label>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-semibold text-slate-800 mb-4 px-1">Problem-Solution History</h2>
+<div class="bg-white p-5 rounded-xl border border-slate-200 card-shadow">
+<p class="text-slate-700 text-sm font-medium">Similar Past Issues &amp; Solutions</p>
+<p class="text-slate-900 text-3xl font-bold mt-1">120</p>
+<div class="flex items-center gap-1 mt-1">
+<p class="text-slate-500 text-xs">Last 3 Months</p>
+<p class="text-green-600 text-xs font-medium">+15%</p>
+</div>
+<div class="mt-4 h-36">
+<svg fill="none" height="100%" preserveAspectRatio="xMidYMid meet" viewBox="-3 0 478 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H326.769H0V109Z" fill="url(#paint0_linear_sidebar_graph)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#3490f3" stroke-linecap="round" stroke-width="2.5"></path>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="paint0_linear_sidebar_graph" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#A8D5FA"></stop>
+<stop offset="1" stop-color="#A8D5FA" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>
+</div>
+<div class="flex justify-around mt-2">
+<p class="text-slate-500 text-xs font-medium">Jan</p>
+<p class="text-slate-500 text-xs font-medium">Feb</p>
+<p class="text-slate-500 text-xs font-medium">Mar</p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-xl font-semibold text-slate-800 mb-4 px-1">Affinity Matching</h2>
+<div class="space-y-4">
+<label class="flex flex-col">
+<span class="text-sm font-medium text-slate-600 mb-1">Shared Interests</span>
+<select class="form-select w-full rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-700 focus:border-blue-500 focus:ring-blue-500 shadow-sm transition duration-150 ease-in-out">
+<option value="one">All Interests</option>
+<option value="two">Sustainability</option>
+<option value="three">Education</option>
+</select>
+</label>
+<button class="w-full flex items-center justify-center rounded-lg h-10 px-4 bg-[#3490f3] text-white text-sm font-semibold hover:bg-blue-600 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 shadow-sm">
+                Find Teammates
+              </button>
+</div>
+</div>
+</aside>
+<main class="layout-content-container flex flex-col">
+<header class="mb-6">
+<h1 class="text-3xl font-bold text-slate-900">Builder's Hub</h1>
+<p class="text-slate-600 text-sm mt-1">Discover and engage with local, meaningful problems.</p>
+</header>
+<div class="space-y-6">
+<div class="bg-white p-6 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start gap-6 card-shadow hover:shadow-lg transition-shadow duration-200">
+<div class="flex-shrink-0 w-full sm:w-48 h-40 sm:h-auto rounded-lg overflow-hidden">
+<img alt="Community Garden" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJWjxD2AEx5o-5fRyimmo2gKxyNlMHZMXm2G1B5rV7Ig8TD_MEwvGZcuZLq2wEgBXBmhJGBxnZlFFKuRGFizm08Yww4sNByt8ml3ATqqdO3987-_L-YienLiOTh-NQob4RiuvEtxWJr0MBm1frAifUnVXD1sFib3oFGX_VfxYH6Nbe17cqbOwGNwtGKJ4i7PW-OF-CQQWMBsM-X8MjujkS8DB4h3KydbbVBJUkmxXL5tl_UxfN5vWndMqLoYWKaS4PJ44Ypgzj8cE"/>
+</div>
+<div class="flex-1">
+<span class="inline-block bg-yellow-100 text-yellow-700 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Medium</span>
+<h3 class="text-lg font-semibold text-slate-800 mb-1">Community Garden Initiative</h3>
+<p class="text-slate-600 text-sm mb-3 line-clamp-2">Enhance green spaces in urban areas by creating community gardens, fostering local food production and neighborhood engagement.</p>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-md h-9 px-4 bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2">
+                    View Details
+                  </button>
+<button class="flex items-center justify-center rounded-md h-9 px-4 bg-[#3490f3] text-white text-sm font-medium hover:bg-blue-600 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    🛠️ Quick Commit
+                  </button>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start gap-6 card-shadow hover:shadow-lg transition-shadow duration-200">
+<div class="flex-shrink-0 w-full sm:w-48 h-40 sm:h-auto rounded-lg overflow-hidden">
+<img alt="Youth Mentorship" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnAyCkQJ3onJN51B8QePcdnb0zCkrAdHlHzn9jSLBdxzHzCAUQeExkrJRN-McAl1UjkjxGET6PG2rKhrNznoDVLj2ceIm_6J1yh6rA7zJWl0Ihy7CXC-o3N_kYAzhsls7Xm8UG3p5GxC83tlcjhMPvlJ7srUJbz9GDB8DuGAlRVmgZTgRouZbzP51NNHxfLPy-ftjAv8Lia-45FIxjUYKYg-UklYNO2aFgc1xOgYzktrYHGH2chOBa-iKLh6EWc1bTpxQZdV2QQrA"/>
+</div>
+<div class="flex-1">
+<span class="inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Low</span>
+<h3 class="text-lg font-semibold text-slate-800 mb-1">Youth Mentorship Program</h3>
+<p class="text-slate-600 text-sm mb-3 line-clamp-2">Support at-risk youth through mentorship and skill-building workshops, empowering them for a brighter future.</p>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-md h-9 px-4 bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2">
+                    View Details
+                  </button>
+<button class="flex items-center justify-center rounded-md h-9 px-4 bg-[#3490f3] text-white text-sm font-medium hover:bg-blue-600 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    🛠️ Quick Commit
+                  </button>
+</div>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start gap-6 card-shadow hover:shadow-lg transition-shadow duration-200">
+<div class="flex-shrink-0 w-full sm:w-48 h-40 sm:h-auto rounded-lg overflow-hidden">
+<img alt="Refugee ID System" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCum3uRkjfHbP14sQzFNEZJwRIch29G3vwKKgT6VkOWCVAhy9mk3kGG4S776q61Ku0PgUm7R7hNBBe_f4hw0bbRv5Quu3EUrOPwW6zmZ-KbbKk_cK-4uowz265orx4lD41n04tsLNlipRkuu32oUgK_Z5GKIcv_a8sscX160NKi2SqqvmGnm4ZtKdCSwVP6-ZXFW27-c5d_gaxWCTSVDzbK_ScE-G9jGZ0Pzm9v1_1AqnP-BFt_VXUU2LeLLEfk_1sLdQZT2bZL-Y8"/>
+</div>
+<div class="flex-1">
+<span class="inline-block bg-red-100 text-red-700 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">High</span>
+<h3 class="text-lg font-semibold text-slate-800 mb-1">Digital ID System for War Refugees</h3>
+<p class="text-slate-600 text-sm mb-3 line-clamp-2">Develop a secure and accessible digital identification system for refugees displaced by conflict, enabling access to essential services and aid.</p>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center rounded-md h-9 px-4 bg-slate-100 text-slate-700 text-sm font-medium hover:bg-slate-200 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2">
+                    View Details
+                  </button>
+<button class="flex items-center justify-center rounded-md h-9 px-4 bg-[#3490f3] text-white text-sm font-medium hover:bg-blue-600 transition duration-150 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    🛠️ Quick Commit
+                  </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+
+</body></html>
