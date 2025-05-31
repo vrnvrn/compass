@@ -1,0 +1,215 @@
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<title>Compass - Issue Details</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+</head>
+<body class="bg-gray-50" style='font-family: Inter, "Noto Sans", sans-serif;'>
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 px-10 py-4 bg-white shadow-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-gray-800">
+<div class="size-6 text-[#d2e2f3]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 4H17.3334V17.3334H30.6666V30.6666H44V44H4V4Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">Compass</h2>
+</div>
+<nav class="flex items-center gap-6">
+<a class="text-gray-600 hover:text-gray-900 text-sm font-medium leading-normal transition-colors" href="#">Challenges</a>
+<a class="text-gray-600 hover:text-gray-900 text-sm font-medium leading-normal transition-colors" href="#">Solutions</a>
+<a class="text-gray-600 hover:text-gray-900 text-sm font-medium leading-normal transition-colors" href="#">Participants</a>
+<a class="text-gray-600 hover:text-gray-900 text-sm font-medium leading-normal transition-colors" href="#">Prizes</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<label class="relative flex items-center">
+<div class="text-gray-400 absolute left-3 flex items-center justify-center" data-icon="MagnifyingGlass" data-size="20px" data-weight="regular">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
+</svg>
+</div>
+<input class="form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#d2e2f3] border border-gray-300 bg-white h-10 placeholder:text-gray-400 px-10 text-sm font-normal leading-normal" placeholder="Search" value=""/>
+</label>
+<button class="flex items-center justify-center rounded-full h-10 w-10 bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors">
+<div class="text-gray-700" data-icon="Bell" data-size="20px" data-weight="regular">
+<svg fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
+<path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06ZM128,216a24,24,0,0,1-22.62-16h45.24A24,24,0,0,1,128,216ZM48,184c7.7-13.24,16-43.92,16-80a64,64,0,1,1,128,0c0,36.05,8.28,66.73,16,80Z"></path>
+</svg>
+</div>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border border-gray-200" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB1KmMrm2YdXWwdvAznPhXhppUuCfKIBUrsd0Nf6RcF14FytqcCY9G_cP_kyifpa_PNKNRaf2dFtnmWArEXqELonRPLtDzoQDE7Tj5WgzyhQ9Pz2iBkpgQZuAtxyI1sEhK501V2pti7cCbaL3KrPz6VIr1dzpC2WDcIzkwCQGs-Z9f8u3uGI5gJHVcjRn8HsKgsHH_y9PYdVSlxGlNMwm3pOWVwgiP2vNXNtg72V4TGSgiFjiaGCEAUvvdrklshotSxMOvlHJfnMgk");'></div>
+</div>
+</header>
+<main class="px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col w-full max-w-4xl">
+<div class="flex items-center space-x-2 text-sm text-gray-500 mb-6 px-4">
+<a class="hover:text-gray-700 hover:underline" href="#">Builder's Hub</a>
+<span>/</span>
+<a class="hover:text-gray-700 hover:underline" href="#">Issues</a>
+<span>/</span>
+<span class="font-medium text-gray-700">Digital ID System for War Refugees</span>
+</div>
+<div class="bg-white shadow-lg rounded-xl p-6 md:p-8">
+<div class="mb-6">
+<div class="flex items-start justify-between gap-4">
+<div class="flex-1">
+<h1 class="text-gray-800 text-3xl md:text-4xl font-bold leading-tight mb-2">Digital ID System for War Refugees</h1>
+<p class="text-gray-600 text-base">
+                    Leverage blockchain for secure and accessible digital identities for war refugees.
+                  </p>
+<p class="text-xs text-gray-500 mt-2">Stakeholder: UNHCR (United Nations High Commissioner for Refugees)</p>
+</div>
+<span class="inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-green-100 px-3 py-1 text-xs font-medium text-green-700 shrink-0 mt-1">
+<svg class="lucide lucide-shield-check h-4 w-4 text-green-600" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+<path d="m9 12 2 2 4-4"></path>
+</svg>
+                  Verified
+                </span>
+</div>
+</div>
+<div class="mb-8 flex flex-wrap items-center gap-4">
+<button class="flex items-center justify-center rounded-full h-10 px-5 bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors">
+<span class="mr-2 text-xl">🛠️</span>
+                Quick Commit (7)
+              </button>
+</div>
+<section class="mb-8">
+<h2 class="text-gray-800 text-xl font-semibold leading-tight mb-3">Issue Description</h2>
+<p class="text-gray-700 text-base leading-relaxed">
+                War refugees often lack verifiable identification, hindering access to essential services and aid. This challenge focuses on creating a secure, decentralized digital ID system using blockchain technology. The system should be user-friendly, protect privacy, and be easily verifiable by relevant organizations.
+              </p>
+</section>
+<section class="mb-8">
+<h2 class="text-gray-800 text-xl font-semibold leading-tight mb-3">Impact</h2>
+<p class="text-gray-700 text-base leading-relaxed">
+                A robust digital ID system can significantly improve the lives of war refugees by enabling access to humanitarian aid, healthcare, education, and financial services. It can also streamline registration processes for asylum and resettlement, and help prevent identity theft and fraud.
+              </p>
+</section>
+<section class="mb-8">
+<h2 class="text-gray-800 text-xl font-semibold leading-tight mb-3">Affected Communities</h2>
+<p class="text-gray-700 text-base leading-relaxed">
+                This issue directly affects war refugees, displaced populations, and aid organizations. Solutions will also benefit host governments and international bodies working to manage refugee crises and provide support.
+              </p>
+</section>
+<div class="mb-8 flex justify-start">
+<button class="flex items-center justify-center rounded-full h-11 px-6 bg-[#d2e2f3] text-gray-800 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-80 transition-all duration-200">
+<svg class="mr-2 lucide lucide-lightbulb" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
+<path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A5.5 5.5 0 0 0 12.5 3C12.5 3 12.5 3 12 3a5 5 0 0 0-5 5c0 .3.1.6.2.8L6 11v3c0 1.7 1.3 3 3 3h1"></path>
+<path d="M9 21h6"></path>
+<path d="M12 17v4"></path>
+</svg>
+<span class="truncate">Generate Hackathon Ideas</span>
+</button>
+</div>
+<section>
+<h2 class="text-gray-800 text-xl font-semibold leading-tight mb-4">Example Hackathon Ideas</h2>
+<div class="space-y-6">
+<div class="flex flex-col gap-3 bg-gray-50 p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3">
+<div class="text-gray-600 flex items-center justify-center rounded-lg bg-gray-200 shrink-0 size-10">
+<svg class="lucide lucide-wallet" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"></path>
+<path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"></path>
+</svg>
+</div>
+<p class="text-gray-800 text-base font-medium leading-normal flex-1">Self-Sovereign ID Wallet using Hedera</p>
+</div>
+<p class="text-gray-700 text-sm leading-relaxed md:ml-13">An application allowing refugees to create and manage their digital identities using Hedera's decentralized identity services, ensuring control over their data and facilitating easy verification.
+                    <span class="block mt-2 text-xs text-gray-500 font-medium">Prize Track: Hedera - AI, Agents &amp; Hedera Services</span>
+</p>
+<div class="flex flex-wrap items-center gap-3 md:ml-13 mt-2">
+<button class="flex items-center justify-center rounded-md h-9 px-4 bg-blue-500 text-white text-xs font-medium hover:bg-blue-600 transition-colors">
+<span class="mr-1.5 text-base">🛠️</span> Commit
+                    </button>
+<button class="flex items-center gap-1.5 rounded-md h-9 px-3 border border-gray-300 bg-white text-gray-700 text-xs font-medium hover:bg-gray-50 transition-colors">
+<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+                      UNHCR Approved
+                    </button>
+<button class="flex items-center gap-1.5 rounded-md h-9 px-3 border border-gray-300 bg-white text-gray-700 text-xs font-medium hover:bg-gray-50 transition-colors">
+<svg class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+                      Hedera Approved
+                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-3 bg-gray-50 p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3">
+<div class="text-gray-600 flex items-center justify-center rounded-lg bg-gray-200 shrink-0 size-10">
+<svg class="lucide lucide-link" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+</div>
+<p class="text-gray-800 text-base font-medium leading-normal flex-1">Cross-Chain Verification with LayerZero</p>
+</div>
+<p class="text-gray-700 text-sm leading-relaxed md:ml-13">A system that enables verification of refugee IDs across different blockchain networks using LayerZero, ensuring IDs can be recognized and used regardless of the platform.
+                    <span class="block mt-2 text-xs text-gray-500 font-medium">Prize Track: LayerZero - Composability Track</span>
+</p>
+<div class="flex flex-wrap items-center gap-3 md:ml-13 mt-2">
+<button class="flex items-center justify-center rounded-md h-9 px-4 bg-blue-500 text-white text-xs font-medium hover:bg-blue-600 transition-colors">
+<span class="mr-1.5 text-base">🛠️</span> Commit
+                    </button>
+<button class="flex items-center gap-1.5 rounded-md h-9 px-3 border border-gray-300 bg-white text-gray-700 text-xs font-medium hover:bg-gray-50 transition-colors">
+<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+                      UNHCR Approved
+                    </button>
+<button class="flex items-center gap-1.5 rounded-md h-9 px-3 border border-gray-300 bg-white text-gray-700 text-xs font-medium hover:bg-gray-50 transition-colors">
+<svg class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+                      LayerZero Approved
+                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-3 bg-gray-50 p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow">
+<div class="flex items-center gap-3">
+<div class="text-gray-600 flex items-center justify-center rounded-lg bg-gray-200 shrink-0 size-10">
+<svg class="lucide lucide-folder-lock" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L8.6 3.3a2 2 0 0 0-1.7-.9H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2Z"></path>
+<circle cx="15" cy="15" r="1"></circle>
+<path d="M12 15a3 3 0 0 0 6 0"></path>
+</svg>
+</div>
+<p class="text-gray-800 text-base font-medium leading-normal flex-1">Secure Document Storage with Filecoin</p>
+</div>
+<p class="text-gray-700 text-sm leading-relaxed md:ml-13">A solution for refugees to securely store copies of important documents (e.g., identification, medical records) using Filecoin's decentralized storage, ensuring data is safe, private, and accessible when needed.
+                    <span class="block mt-2 text-xs text-gray-500 font-medium">Prize Track: Protocol Labs - Build Fair Data Economy</span>
+</p>
+<div class="flex flex-wrap items-center gap-3 md:ml-13 mt-2">
+<button class="flex items-center justify-center rounded-md h-9 px-4 bg-blue-500 text-white text-xs font-medium hover:bg-blue-600 transition-colors">
+<span class="mr-1.5 text-base">🛠️</span> Commit
+                    </button>
+<button class="flex items-center gap-1.5 rounded-md h-9 px-3 border border-gray-300 bg-white text-gray-700 text-xs font-medium hover:bg-gray-50 transition-colors">
+<svg class="h-4 w-4 text-green-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+                      UNHCR Approved
+                    </button>
+<button class="flex items-center gap-1.5 rounded-md h-9 px-3 border border-gray-300 bg-white text-gray-700 text-xs font-medium hover:bg-gray-50 transition-colors">
+<svg class="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" fill-rule="evenodd"></path>
+</svg>
+                      Protocol Labs Approved
+                    </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
