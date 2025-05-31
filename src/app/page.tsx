@@ -55,7 +55,7 @@ export default function Home() {
 
       {suggestions.length > 0 && (
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold">💡 Suggested Hackathon Projects</h2>
+          <h2 className="text-[1.1rem] font-medium text-black flex items-center gap-2">💡 Suggested Hackathon Projects</h2>
           {suggestions.map((s, idx) => (
             <div key={idx} className="p-4 border rounded bg-yellow-100 text-sm prose prose-sm">
               <ReactMarkdown>{s}</ReactMarkdown>
