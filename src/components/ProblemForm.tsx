@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import { ProblemBrief } from '@/lib/types'
-import { prover } from '@/lib/vlayer'
+// import { prover } from '@/lib/vlayer'
+import { prover } from '@/lib/mockProver'
 
 export default function ProblemForm({ onSubmit }: { onSubmit: (p: ProblemBrief) => void }) {
   const [form, setForm] = useState<Omit<ProblemBrief, 'emailProof'>>({
