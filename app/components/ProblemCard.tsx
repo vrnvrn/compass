@@ -10,29 +10,31 @@ interface ProblemCardProps {
 
 export default function ProblemCard({ problem }: ProblemCardProps) {
   return (
-    <Card>
-      <CardHeader className="pb-3">
+    <Card className="overflow-hidden border-0 bg-white shadow-lg shadow-gray-100/50">
+      <CardHeader className="pb-3 pt-6">
         <CardTitle className="flex items-center gap-2 text-xl">
-          {problem.title}
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+            {problem.title}
+          </span>
           {problem.verifiedDomain && (
-            <span className="inline-flex items-center rounded-full bg-emerald-50 px-2 py-1 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
+            <span className="inline-flex items-center rounded-full bg-gradient-to-r from-emerald-50 to-teal-50 px-2 py-1 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
               <CheckCircle2 className="mr-1 h-3 w-3" />
               Verified Submitter
             </span>
           )}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-3">
-        <p className="text-gray-700">{problem.description}</p>
+      <CardContent className="space-y-4">
+        <p className="text-gray-600">{problem.description}</p>
         
-        <div className="rounded-lg border border-gray-100 bg-gray-50/50 px-3 py-2.5">
+        <div className="rounded-lg bg-gradient-to-r from-gray-50 to-gray-100/80 px-4 py-3">
           <div className="flex items-center gap-2">
             <Shield className="h-4 w-4 text-gray-400" />
             <div className="flex-1 text-sm">
-              <span className="text-gray-600">Submitted by: </span>
+              <span className="text-gray-500">Submitted by: </span>
               <span className="font-medium text-gray-900">{problem.email}</span>
               {problem.verifiedDomain && (
-                <div className="mt-1 flex items-center gap-1.5 text-emerald-700">
+                <div className="mt-1.5 flex items-center gap-1.5 text-emerald-700">
                   <CheckCircle2 className="h-3.5 w-3.5" />
                   <span className="text-xs">
                     Verified {problem.verifiedDomain} domain through Vlayer
