@@ -9,13 +9,32 @@ import { ProblemBrief } from '@/lib/types'
 export default function Home() {
   const [problems, setProblems] = useState<ProblemBrief[]>([])
   const [suggestions, setSuggestions] = useState<string[]>([])
+  const [loadingSuggestions, setLoadingSuggestions] = useState(false)
 
   const handleSubmit = async (p: ProblemBrief) => {
     setProblems([p, ...problems])
 
-    // MOCKED suggestion based on problem title
-    const mockSuggestion = `Build a dApp that helps tackle "${p.title}" by enabling real-time reporting, community voting, and DAO-based funding.`
-    setSuggestions([mockSuggestion, ...suggestions])
+    setLoadingSuggestions(true)
+    try {
+      const res = await fetch('/api/suggest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            title: p.title,
+            description: p.description,
+            sponsor: p.sponsorTrack,
+          }),          
+      })
+
+      const data = await res.json()
+      if (data && data.suggestions) {
+        setSuggestions((prev) => [...data.suggestions, ...prev])
+      }
+    } catch (err) {
+      console.error('Error generating suggestions:', err)
+    } finally {
+      setLoadingSuggestions(false)
+    }
   }
 
   return (
@@ -33,9 +52,13 @@ export default function Home() {
         )}
       </section>
 
+      {loadingSuggestions && (
+        <p className="text-sm text-blue-600">💭 Generating suggestions...</p>
+      )}
+
       {suggestions.length > 0 && (
         <section className="space-y-4">
-          <h2 className="text-xl font-semibold">💡 Suggested Hackathon Projects (POC)</h2>
+          <h2 className="text-xl font-semibold">💡 Suggested Hackathon Projects</h2>
           {suggestions.map((s, idx) => (
             <div key={idx} className="p-4 border rounded bg-yellow-100 text-sm">
               {s}
