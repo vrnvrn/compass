@@ -1,5 +1,6 @@
 # Compass 🧭
-**/rooted_navigation_for_collective_futures**
+
+![🧭 Compass](https://github.com/user-attachments/assets/4edaeabb-2a20-4ad7-a8dc-2ee4b97b286e)
 
 _Compass connects verified (g)local issues with builders and bounties at global hackathons._
 
