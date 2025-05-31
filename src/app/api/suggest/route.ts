@@ -24,10 +24,10 @@ export async function POST(req: Request) {
   
   Suggest 3 creative, feasible hackathon project ideas that align with sponsors and help solve these problems.
   
-  Format:
-  🚀 Project Title
-  🔍 Sponsor Track
-  🧩 Idea (1–2 sentence description)
+  Markdown Format:
+  ### 🚀 Project Title
+  **🔍 Sponsor Track
+  **🧩 Idea (1–2 sentence description)
     `
   
     const response = await openai.chat.completions.create({

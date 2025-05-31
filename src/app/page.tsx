@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import ReactMarkdown from 'react-markdown'
 import ProblemForm from '@/components/ProblemForm'
 import ProblemCard from '@/components/ProblemCard'
 import MockEmailProof from '@/components/MockEmailProof'
@@ -13,17 +14,13 @@ export default function Home() {
 
   const handleSubmit = async (p: ProblemBrief) => {
     setProblems([p, ...problems])
-
     setLoadingSuggestions(true)
+
     try {
       const res = await fetch('/api/suggest', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-            title: p.title,
-            description: p.description,
-            sponsor: p.sponsorTrack,
-          }),          
+        body: JSON.stringify({ problems: [p] }),
       })
 
       const data = await res.json()
@@ -44,7 +41,7 @@ export default function Home() {
       <ProblemForm onSubmit={handleSubmit} />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">Submitted Problems</h2>
+        <h2 className="text-xl font-semibold">🗂 Submitted Problems</h2>
         {problems.length === 0 ? (
           <p className="text-gray-500">No problems submitted yet.</p>
         ) : (
@@ -60,8 +57,8 @@ export default function Home() {
         <section className="space-y-4">
           <h2 className="text-xl font-semibold">💡 Suggested Hackathon Projects</h2>
           {suggestions.map((s, idx) => (
-            <div key={idx} className="p-4 border rounded bg-yellow-100 text-sm">
-              {s}
+            <div key={idx} className="p-4 border rounded bg-yellow-100 text-sm prose prose-sm">
+              <ReactMarkdown>{s}</ReactMarkdown>
             </div>
           ))}
         </section>
