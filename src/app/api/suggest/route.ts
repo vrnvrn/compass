@@ -22,7 +22,7 @@ export async function POST(req: Request) {
   
   ${problems.map((p: any, i: number) => `${i + 1}. "${p.title}" - ${p.description}`).join('\n')}
   
-  Suggest 3 creative, feasible hackathon project ideas that align with sponsors and help solve these problems.
+  Suggest 1 creative, feasible hackathon project idea that aligns with 1-3 sponsors to help solve one of these problems.
   
   Markdown Format:
   🚀 Project Title

@@ -1,11 +1,9 @@
-/* --- src/app/page.tsx --- */
 'use client'
 
 import { useState } from 'react'
 import ProblemForm from '@/components/ProblemForm'
 import ProblemCard from '@/components/ProblemCard'
 import GeneratedSuggestionCard from '@/components/GeneratedSuggestionCard'
-import MockEmailProof from '@/components/MockEmailProof'
 import { ProblemBrief } from '@/lib/types'
 import { getAISuggestions } from '@/lib/ai'
 
@@ -18,18 +16,17 @@ export default function Home() {
     setProblems([p, ...problems])
   }
 
-  const handleGenerateIdeas = async () => {
+  const generateSuggestions = async () => {
     setLoadingSuggestions(true)
     try {
-      const response = await fetch('/api/suggest', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ problems }),
-      })
-      const data = await response.json()
-      setSuggestions(data.suggestions || [])
+      const allSuggestions: string[] = []
+      for (const problem of problems) {
+        const sug = await getAISuggestions(problem)
+        allSuggestions.push(...sug)
+      }
+      setSuggestions(allSuggestions)
     } catch (err) {
-      console.error('Error generating suggestions:', err)
+      console.error('Suggestion generation failed:', err)
     } finally {
       setLoadingSuggestions(false)
     }
@@ -42,25 +39,22 @@ export default function Home() {
       <ProblemForm onSubmit={handleSubmit} />
 
       <section className="space-y-4">
-        <h2 className="text-xl font-semibold">📋 Submitted Problems</h2>
+        <h2 className="text-xl font-semibold">📚 Submitted Problems</h2>
         {problems.length === 0 ? (
           <p className="text-gray-500">No problems submitted yet.</p>
         ) : (
           problems.map((p, idx) => <ProblemCard key={idx} problem={p} />)
         )}
-
-        {problems.length > 0 && (
-          <button
-            onClick={handleGenerateIdeas}
-            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
-          >
-            ✨ Generate Hackathon Ideas
-          </button>
-        )}
       </section>
 
-      {loadingSuggestions && (
-        <p className="text-sm text-blue-600">💭 Generating suggestions...</p>
+      {problems.length > 0 && (
+        <button
+          className="bg-amber-500 text-white px-4 py-2 rounded hover:bg-amber-600"
+          onClick={generateSuggestions}
+          disabled={loadingSuggestions}
+        >
+          {loadingSuggestions ? 'Generating...' : '⚡ Generate Hackathon Ideas'}
+        </button>
       )}
 
       {suggestions.length > 0 && (
@@ -71,8 +65,6 @@ export default function Home() {
           ))}
         </section>
       )}
-
-      <MockEmailProof />
     </main>
   )
 }
