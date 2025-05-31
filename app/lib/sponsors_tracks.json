@@ -1,0 +1,35 @@
+{
+  "sponsors": [
+    {
+      "name": "TechCorp",
+      "tracks": [
+        {
+          "name": "AI for Good",
+          "description": "Using artificial intelligence to solve social and environmental challenges"
+        },
+        {
+          "name": "Smart Cities",
+          "description": "Building technology solutions for urban development and sustainability"
+        }
+      ]
+    },
+    {
+      "name": "HealthTech",
+      "tracks": [
+        {
+          "name": "Digital Health",
+          "description": "Innovative solutions for healthcare delivery and patient care"
+        }
+      ]
+    },
+    {
+      "name": "EcoSolutions",
+      "tracks": [
+        {
+          "name": "Green Tech",
+          "description": "Developing sustainable solutions for environmental challenges"
+        }
+      ]
+    }
+  ]
+} 
