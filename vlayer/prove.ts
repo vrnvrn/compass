@@ -22,7 +22,7 @@ const {
 
 if (!john) {
   throw new Error(
-    "No account found make sure EXAMPLES_TEST_PRIVATE_KEY is set in your environment variables",
+    "No account found. Make sure EXAMPLES_TEST_PRIVATE_KEY is set in your .env.testnet.local"
   );
 }
 
@@ -65,19 +65,37 @@ const vlayer = createVlayerClient({
   token: config.token,
 });
 
-const hash = await vlayer.prove({
-  address: prover,
-  proverAbi: proverSpec.abi,
-  functionName: "balance",
-  args: [john.address],
-  chainId: chain.id,
-  gasLimit: config.gasLimit,
-});
-const result = await vlayer.waitForProvingResult({ hash });
+let result;
+try {
+  const hash = await vlayer.prove({
+    address: prover,
+    proverAbi: proverSpec.abi,
+    functionName: "balance",
+    args: [john.address],
+    chainId: chain.id,
+    gasLimit: config.gasLimit,
+  });
+
+  // DEBUGGING WRAP FOR API RESPONSE
+  console.log("Waiting for proving result...");
+
+  result = await vlayer.waitForProvingResult({ hash });
+  console.log("Proof result:", result);
+} catch (err: any) {
+  console.error("❌ Error while waiting for proof:", err);
+  if (err?.response) {
+    try {
+      const text = await err.response.text();
+      console.error("❌ Raw response text:", text);
+    } catch (innerErr) {
+      console.error("⚠️ Could not read raw response body.");
+    }
+  }
+  process.exit(1);
+}
+
 const [proof, owner, balance] = result;
 
-console.log("Proof result:", result);
-// Workaround for viem estimating gas with `latest` block causing future block assumptions to fail on slower chains like mainnet/sepolia
 const gas = await ethClient.estimateContractGas({
   address: verifier,
   abi: verifierSpec.abi,
@@ -103,4 +121,4 @@ const receipt = await ethClient.waitForTransactionReceipt({
   retryDelay: 1000,
 });
 
-console.log(`Verification result: ${receipt.status}`);
+console.log(`✅ Verification result: ${receipt.status}`);

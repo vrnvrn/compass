@@ -1,6 +1,6 @@
 // src/lib/mockProver.ts
 
-export const prover = {
+/* export const prover = {
     requestEmailProof: async ({ email, statement }: { email: string; statement: string }) => {
       console.log('🔧 Mock email proof requested:', email, '| Statement:', statement)
       // Simulate delay
@@ -17,4 +17,4 @@ export const prover = {
         verified: true,
       }
     },
-  }  
+  }  */
