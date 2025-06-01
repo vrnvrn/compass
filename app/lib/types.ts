@@ -19,6 +19,8 @@ export interface FormData {
 }
 
 export const PROBLEM_SCOPES = [
+  'All Scopes',
+  'Rural',
   'Neighborhood',
   'City-wide',
   'Metropolitan',

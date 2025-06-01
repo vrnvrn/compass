@@ -31,7 +31,7 @@ export default function Problems() {
   useEffect(() => {
     let filtered = [...problems]
 
-    if (scope) {
+    if (scope && scope !== 'All Scopes') {
       filtered = filtered.filter(p => !p.scope || p.scope === scope)
     }
 
