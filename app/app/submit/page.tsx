@@ -29,6 +29,9 @@ export default function SubmitProblem() {
         </div>
 
         <div className="max-w-2xl mx-auto">
+          <div className="mb-4 p-4 bg-yellow-50 border border-yellow-200 rounded-md text-sm text-yellow-800">
+            Note: The ZK email verification is currently simulated for demonstration purposes. Real zero-knowledge proof verification coming soon!
+          </div>
           <ProblemForm onSubmit={handleSubmit} />
         </div>
       </div>
