@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, PlusCircle, ListChecks, Sparkles, Github, Presentation, Users } from 'lucide-react'
+import { ArrowRight, PlusCircle, ListChecks, Sparkles, Github, Presentation, Users, Info } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -64,9 +64,9 @@ export default function Home() {
           <div className="flex justify-center items-center gap-6 mt-8">
             <Link 
               href="/about"
-              className="text-[#2D2D2A] hover:text-[#7B9E82] transition-colors text-lg"
+              className="text-[#2D2D2A] hover:text-[#7B9E82] transition-colors"
             >
-              About
+              <Info className="h-8 w-8" />
             </Link>
             <a 
               href="https://github.com/vrnvrn/compass" 
