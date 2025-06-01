@@ -4,7 +4,7 @@
 
 _Compass connects verified (g)local issues with builders and bounties at global hackathons._
 
-Compass is a platform designed to reorient global hackathons toward grounded, collective impact by connecting local community stakeholders and their needs with builders, funders, and organizers. Through a system of verified issue-sourcing, Compass enables communities —especially those historically excluded from innovation spaces— to articulate concrete problems they face. These needs are translated into actionable prompts and integrated into the hackathon's unique workflow as complements to bounties, featured challenges, or curated tracks, compatible with existing parameters on the organizer's side, and as hackathon ideas on the builder's side.
+Compass is a platform designed to reorient global hackathons toward grounded, collective impact by connecting local community stakeholders and their needs with builders, funders, and organizers. Through a system of verified issue-sourcing, Compass enables communities to articulate concrete problems they face. These needs are translated into actionable prompts and integrated into the hackathon's unique workflow as complements to bounties, featured challenges, or curated tracks, compatible with existing parameters on the organizer's side, and as hackathon ideas on the builder's side.
 
 Rather than relying on the benevolence of sponsors or organizers to champion local relevance, Compass embeds mechanisms of accountability, visibility, and reciprocity at the protocol and UI/UX levels. It makes the “localhost” visible at the global scale.
 
