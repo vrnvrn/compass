@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, PlusCircle, ListChecks, Sparkles } from 'lucide-react'
+import { ArrowRight, PlusCircle, ListChecks, Sparkles, Github } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -60,6 +60,15 @@ export default function Home() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
+
+          <a 
+            href="https://github.com/vrnvrn/compass" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="flex justify-center mt-8"
+          >
+            <Github className="h-8 w-8 text-[#2D2D2A] hover:text-[#7B9E82] transition-colors" />
+          </a>
         </div>
       </div>
     </div>
