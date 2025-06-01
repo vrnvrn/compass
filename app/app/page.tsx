@@ -77,6 +77,24 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Hackathon Organizers Section */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold text-[#2D2D2A] text-center">For Hackathon Organizers</h2>
+            <p className="text-center text-[#2D2D2A]/80 mb-4">
+              Event organizers and community leaders shaping the future of hackathons
+            </p>
+            <div className="space-y-4">
+              <Button
+                className="w-full bg-gradient-to-r from-[#7B9E82]/40 via-[#7B9E82]/60 to-[#7B9E82]/40 cursor-not-allowed opacity-70 h-16 text-lg text-[#F2EEE3]"
+                size="lg"
+                disabled
+              >
+                Admin Dashboard (Coming Soon)
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          </div>
+
           <div className="flex justify-center items-center gap-6 mt-8">
             <Link 
               href="/about"
