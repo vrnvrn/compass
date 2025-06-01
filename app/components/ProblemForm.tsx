@@ -9,7 +9,16 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { FormData, ProblemBrief } from '@/lib/types'
-import { Shield, CheckCircle2, Loader2 } from 'lucide-react'
+import { Shield, CheckCircle2, Loader2, Wand2 } from 'lucide-react'
+import { toast } from 'sonner'
+
+// Custom error class for better error handling
+class GenerationError extends Error {
+  constructor(message: string, public details?: any) {
+    super(message);
+    this.name = 'GenerationError';
+  }
+}
 
 const formSchema = z.object({
   title: z.string().min(1, 'Title is required'),
@@ -24,6 +33,8 @@ interface ProblemFormProps {
 
 export default function ProblemForm({ onSubmit }: ProblemFormProps) {
   const [verifying, setVerifying] = useState(false)
+  const [generatingTitle, setGeneratingTitle] = useState(false)
+  const [generatingDescription, setGeneratingDescription] = useState(false)
   
   const { register, handleSubmit, formState: { errors }, setValue, watch } = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -34,6 +45,66 @@ export default function ProblemForm({ onSubmit }: ProblemFormProps) {
 
   const email = watch('email')
   const emailVerified = watch('emailVerified')
+
+  const generateText = async (type: 'title' | 'description') => {
+    const setGenerating = type === 'title' ? setGeneratingTitle : setGeneratingDescription;
+    
+    try {
+      setGenerating(true);
+
+      let prompt = '';
+      if (type === 'title') {
+        prompt = `Generate a realistic and meaningful local community problem title. 
+The title should be:
+1. Concise (max 10 words)
+2. Specific to a local community issue
+3. Action-oriented
+4. Engaging and clear
+
+Format: Return only the title text, nothing else.`;
+      } else {
+        prompt = `Generate a realistic and meaningful description of a local community problem.
+The description should:
+1. Be 2-3 sentences long
+2. Clearly explain the problem's impact on the community
+3. Be specific and actionable
+4. Use clear, non-technical language
+5. Focus on real issues that could be addressed with technology
+
+Format: Return only the description text, nothing else.`;
+      }
+
+      const response = await fetch('/api/generate-problem', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          type,
+          prompt,
+          systemPrompt: "You are a local community problem expert who helps identify and articulate meaningful community issues that could be solved with technology."
+        }),
+      });
+
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new GenerationError(data.error || 'Failed to generate text', data.details);
+      }
+
+      setValue(type, data.text);
+      toast.success(`Generated ${type} successfully!`);
+
+    } catch (error) {
+      console.error('Error generating text:', error);
+      const errorMessage = error instanceof GenerationError 
+        ? error.message 
+        : 'An unexpected error occurred while generating text';
+      toast.error(errorMessage);
+    } finally {
+      setGenerating(false);
+    }
+  };
 
   const verifyEmail = async () => {
     setVerifying(true)
@@ -67,27 +138,63 @@ export default function ProblemForm({ onSubmit }: ProblemFormProps) {
       <CardContent>
         <form onSubmit={handleSubmit(onSubmitForm)} className="space-y-6 pt-6">
           <div className="space-y-2">
-            <Input
-              placeholder="Problem Title"
-              {...register('title')}
-              className={`bg-gray-50/50 border-gray-200 focus:border-indigo-500 focus:ring-indigo-500/20 ${
-                errors.title ? 'border-red-300 focus:border-red-500 focus:ring-red-500/20' : ''
-              }`}
-            />
+            <div className="relative">
+              <Input
+                placeholder="Problem Title"
+                {...register('title')}
+                className={`bg-gray-50/50 border-gray-200 focus:border-indigo-500 focus:ring-indigo-500/20 ${
+                  errors.title ? 'border-red-300 focus:border-red-500 focus:ring-red-500/20' : ''
+                } pr-[100px]`}
+              />
+              <div className="absolute right-2 top-1/2 -translate-y-1/2">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => generateText('title')}
+                  disabled={generatingTitle}
+                  className="h-7 px-2 text-gray-500 hover:text-indigo-600"
+                >
+                  {generatingTitle ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Wand2 className="h-4 w-4" />
+                  )}
+                </Button>
+              </div>
+            </div>
             {errors.title && (
               <p className="text-red-500 text-sm">{errors.title.message}</p>
             )}
           </div>
           
           <div className="space-y-2">
-            <Textarea
-              placeholder="Describe the problem..."
-              {...register('description')}
-              className={`bg-gray-50/50 border-gray-200 focus:border-indigo-500 focus:ring-indigo-500/20 min-h-[120px] ${
-                errors.description ? 'border-red-300 focus:border-red-500 focus:ring-red-500/20' : ''
-              }`}
-              rows={4}
-            />
+            <div className="relative">
+              <Textarea
+                placeholder="Describe the problem..."
+                {...register('description')}
+                className={`bg-gray-50/50 border-gray-200 focus:border-indigo-500 focus:ring-indigo-500/20 min-h-[120px] ${
+                  errors.description ? 'border-red-300 focus:border-red-500 focus:ring-red-500/20' : ''
+                } pr-[100px]`}
+                rows={4}
+              />
+              <div className="absolute right-2 top-2">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => generateText('description')}
+                  disabled={generatingDescription}
+                  className="h-7 px-2 text-gray-500 hover:text-indigo-600"
+                >
+                  {generatingDescription ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Wand2 className="h-4 w-4" />
+                  )}
+                </Button>
+              </div>
+            </div>
             {errors.description && (
               <p className="text-red-500 text-sm">{errors.description.message}</p>
             )}
