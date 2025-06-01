@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
-import { ProblemBrief } from '@/lib/types';
+import { ProblemBrief, SponsorsData } from '@/lib/types';
+import sponsorsData from '@/lib/sponsors_tracks.json';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -42,7 +43,15 @@ export async function POST(request: Request) {
       });
     }
 
-    const prompt = `Generate 2 innovative hackathon project ideas to solve this community problem:
+    const typedSponsorsData = (sponsorsData as unknown) as SponsorsData;
+    const sponsorTracks = typedSponsorsData.sponsors.map(sponsor => 
+      `${sponsor.emoji} ${sponsor.name} - ${sponsor.track}: ${sponsor.description}`
+    ).join('\n');
+
+    const prompt = `Generate 2 innovative hackathon project ideas to solve this community problem, considering the following available sponsor tracks and technologies:
+
+AVAILABLE SPONSOR TRACKS:
+${sponsorTracks}
 
 PROBLEM CONTEXT
 Title: ${problemData.title}
@@ -63,12 +72,16 @@ For each solution, provide a response in exactly this format (including emojis):
 • [Primary impact point]
 • [Secondary impact point]
 
+🏆 Relevant Sponsor Track(s):
+• [Name relevant sponsor track(s) that this solution aligns with]
+
 ---
 
 Make each suggestion:
 1. Technically feasible for a hackathon (2-3 days of coding)
 2. Focused on real community impact
 3. Leveraging modern technologies
+4. Aligned with at least one sponsor track's goals and technologies
 
 Generate exactly 2 suggestions with a clear separation between them.`;
 
@@ -77,7 +90,7 @@ Generate exactly 2 suggestions with a clear separation between them.`;
         messages: [
           {
             role: "system",
-            content: "You are a hackathon project ideation expert who specializes in generating innovative technical solutions for community problems. Your suggestions should be specific, technically detailed, and focused on real impact. Always maintain the exact format specified, including all emojis and bullet points."
+            content: "You are a hackathon project ideation expert who specializes in generating innovative technical solutions for community problems. Your suggestions should be specific, technically detailed, and focused on real impact. Always maintain the exact format specified, including all emojis and bullet points. Make sure to align suggestions with relevant sponsor tracks when possible."
           },
           {
             role: "user",

@@ -46,4 +46,15 @@ export const URGENCY_LEVELS = [
   'High',
   'Medium',
   'Low',
-] as const; 
+] as const;
+
+export interface Sponsor {
+  name: string;
+  track: string;
+  description: string;
+  emoji: string;
+}
+
+export interface SponsorsData {
+  sponsors: Sponsor[];
+} 

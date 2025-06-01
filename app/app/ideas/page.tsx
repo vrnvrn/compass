@@ -64,7 +64,7 @@ export default function ProjectIdeas() {
           {suggestions.length > 0 && (
             <section className="space-y-4">
               <h2 className="text-2xl font-semibold text-[#2D2D2A]">
-                AI-Generated Project Ideas
+                Project Ideas
               </h2>
               <div className="space-y-4">
                 {suggestions.map((s, idx) => (

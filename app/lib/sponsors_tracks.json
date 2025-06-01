@@ -1,35 +1,88 @@
 {
   "sponsors": [
     {
-      "name": "TechCorp",
-      "tracks": [
-        {
-          "name": "AI for Good",
-          "description": "Using artificial intelligence to solve social and environmental challenges"
-        },
-        {
-          "name": "Smart Cities",
-          "description": "Building technology solutions for urban development and sustainability"
-        }
-      ]
+      "name": "Blockscout",
+      "track": "Explorer & Data Tools",
+      "description": "Use Blockscout\u2019s APIs, SDK, or Merits system to integrate blockchain data, improve UX, and qualify for bounty tracks.",
+      "emoji": "\ud83e\udded"
     },
     {
-      "name": "HealthTech",
-      "tracks": [
-        {
-          "name": "Digital Health",
-          "description": "Innovative solutions for healthcare delivery and patient care"
-        }
-      ]
+      "name": "1inch",
+      "track": "DeFi & Swap Infrastructure",
+      "description": "Enhance your app with 1inch\u2019s swap and limit order protocols, cross-chain capabilities, and trading APIs.",
+      "emoji": "\ud83d\udcb1"
     },
     {
-      "name": "EcoSolutions",
-      "tracks": [
-        {
-          "name": "Green Tech",
-          "description": "Developing sustainable solutions for environmental challenges"
-        }
-      ]
+      "name": "LayerZero",
+      "track": "Omnichain Applications",
+      "description": "Build cross-chain workflows using LayerZero\u2019s messaging, composability, and lzRead data query infrastructure.",
+      "emoji": "\ud83c\udf10"
+    },
+    {
+      "name": "Flow",
+      "track": "Consumer Crypto & DeFi",
+      "description": "Deploy scalable, consumer-friendly dApps or cross-chain DeFi strategies using Flow\u2019s EVM and Cadence platforms.",
+      "emoji": "\ud83d\ude80"
+    },
+    {
+      "name": "Pyth Network",
+      "track": "On-chain Data & Oracles",
+      "description": "Use Pyth\u2019s Entropy RNG or price feeds for real-time, verifiable data in games, DeFi, or prediction apps.",
+      "emoji": "\ud83d\udcca"
+    },
+    {
+      "name": "Flare Network",
+      "track": "Web2 Data & Randomness",
+      "description": "Leverage Flare\u2019s secure random numbers, time series oracles, and Web2 attestation for hybrid dApps.",
+      "emoji": "\u26a1"
+    },
+    {
+      "name": "Hedera",
+      "track": "AI & EVM on Hashgraph",
+      "description": "Build fast, secure apps with Hedera\u2019s AI kits, smart contracts, and unique services like HTS and HCS.",
+      "emoji": "\ud83c\udf10"
+    },
+    {
+      "name": "Vlayer",
+      "track": "Proofs & Verifiable Data",
+      "description": "Create smart contracts using email proofs, web proofs, or historic/cross-chain data via ZK infrastructure.",
+      "emoji": "\ud83d\udd10"
+    },
+    {
+      "name": "World",
+      "track": "Mini Apps & Mass Adoption",
+      "description": "Build mini apps for 23M+ World App users using Minikit SDK and the World Chain infrastructure.",
+      "emoji": "\ud83c\udf0d"
+    },
+    {
+      "name": "Rootstock",
+      "track": "Bitcoin DeFi",
+      "description": "Deploy EVM dApps on Bitcoin via Rootstock; build DeFi tools, automations, or cross-chain integrations.",
+      "emoji": "\u20bf"
+    },
+    {
+      "name": "Yellow",
+      "track": "State Channels & Protocol Infra",
+      "description": "Use ERC-7824 and Nitrolite to build fast, low-cost apps with state channels and protocol contributions.",
+      "emoji": "\u2699\ufe0f"
+    },
+    {
+      "name": "Beraborrow",
+      "track": "Berachain CDP Strategies",
+      "description": "Develop smart CDP modules or vault strategies that enhance Beraborrow\u2019s LSP and NECT token economics.",
+      "emoji": "\ud83e\uddea"
+    },
+    {
+      "name": "Protocol Labs",
+      "track": "Decentralized AI & Data Economy",
+      "description": "Power ethical AI systems and fair data economies using Filecoin, Akave, and decentralized storage tools.",
+      "emoji": "\ud83d\udcc1"
+    },
+    {
+      "name": "Hardhat",
+      "track": "Dev Tools",
+      "description": "Build with Hardhat\u2019s newest alpha tools, including Solidity tests, multi-chain support, and Rust rewrite.",
+      "emoji": "\ud83d\udd27"
     }
   ]
-} 
+}
