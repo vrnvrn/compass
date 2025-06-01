@@ -36,7 +36,7 @@ export default function ProblemForm({ onSubmit }: ProblemFormProps) {
   const [generatingTitle, setGeneratingTitle] = useState(false)
   const [generatingDescription, setGeneratingDescription] = useState(false)
   
-  const { register, handleSubmit, formState: { errors }, setValue, watch } = useForm<FormData>({
+  const { register, handleSubmit, formState: { errors }, setValue, watch, reset } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       emailVerified: false,
@@ -45,6 +45,7 @@ export default function ProblemForm({ onSubmit }: ProblemFormProps) {
 
   const email = watch('email')
   const emailVerified = watch('emailVerified')
+  const currentTitle = watch('title')
 
   const generateText = async (type: 'title' | 'description') => {
     const setGenerating = type === 'title' ? setGeneratingTitle : setGeneratingDescription;
@@ -63,13 +64,15 @@ The title should be:
 
 Format: Return only the title text, nothing else.`;
       } else {
-        prompt = `Generate a realistic and meaningful description of a local community problem.
+        prompt = `Generate a realistic and meaningful description for this local community problem title: "${currentTitle}"
+
 The description should:
 1. Be 2-3 sentences long
 2. Clearly explain the problem's impact on the community
 3. Be specific and actionable
 4. Use clear, non-technical language
 5. Focus on real issues that could be addressed with technology
+6. Directly relate to and expand upon the provided title
 
 Format: Return only the description text, nothing else.`;
       }
@@ -126,6 +129,15 @@ Format: Return only the description text, nothing else.`;
     }
     
     onSubmit(problem)
+    
+    // Reset form after successful submission
+    reset({
+      title: '',
+      description: '',
+      email: '',
+      emailVerified: false,
+    })
+    toast.success('Problem submitted successfully!')
   }
 
   return (
