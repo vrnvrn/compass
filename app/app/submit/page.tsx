@@ -17,11 +17,11 @@ export default function SubmitProblem() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#F2EEE3] to-[#7B9E82]/10">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="mb-8">
           <Link href="/">
-            <Button variant="ghost" className="text-gray-600 hover:text-indigo-600">
+            <Button variant="ghost" className="text-[#2D2D2A] hover:text-[#7B9E82]">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Home
             </Button>

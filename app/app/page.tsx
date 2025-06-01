@@ -7,7 +7,7 @@ import { ArrowRight, PlusCircle, ListChecks } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#F2EEE3] to-[#7B9E82]/10">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
@@ -19,10 +19,10 @@ export default function Home() {
               priority
             />
           </div>
-          <h1 className="text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mb-4">
+          <h1 className="text-5xl font-bold tracking-tight text-[#2D2D2A] mb-4">
             Compass
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-[#2D2D2A] max-w-2xl mx-auto">
           Reorienting global hackathons toward grounded, collective impact.
           </p>
         </div>
@@ -30,7 +30,7 @@ export default function Home() {
         <div className="max-w-2xl mx-auto space-y-6">
           <Link href="/submit" className="block">
             <Button
-              className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-90 transition-opacity h-16 text-lg"
+              className="w-full bg-gradient-to-r from-[#7B9E82]/80 via-[#7B9E82] to-[#7B9E82]/80 hover:opacity-90 transition-opacity h-16 text-lg text-[#F2EEE3]"
               size="lg"
             >
               <PlusCircle className="mr-2 h-5 w-5" />
@@ -41,7 +41,7 @@ export default function Home() {
 
           <Link href="/problems" className="block">
             <Button
-              className="w-full bg-gradient-to-r from-purple-500 to-indigo-500 hover:opacity-90 transition-opacity h-16 text-lg"
+              className="w-full bg-gradient-to-r from-[#7B9E82]/70 via-[#7B9E82]/90 to-[#7B9E82]/70 hover:opacity-90 transition-opacity h-16 text-lg text-[#F2EEE3]"
               size="lg"
             >
               <ListChecks className="mr-2 h-5 w-5" />

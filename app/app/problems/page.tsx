@@ -37,18 +37,18 @@ export default function Problems() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-[#F2EEE3] to-[#7B9E82]/10">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center mb-8">
           <Link href="/">
-            <Button variant="ghost" className="text-gray-600 hover:text-indigo-600">
+            <Button variant="ghost" className="text-[#2D2D2A] hover:text-[#7B9E82]">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Home
             </Button>
           </Link>
           
           <Link href="/submit">
-            <Button className="bg-gradient-to-r from-indigo-500 to-purple-500 hover:opacity-90">
+            <Button className="bg-gradient-to-r from-[#7B9E82]/80 via-[#7B9E82] to-[#7B9E82]/80 hover:opacity-90 text-[#F2EEE3]">
               <PlusCircle className="mr-2 h-4 w-4" />
               Submit Another Problem
             </Button>
@@ -59,7 +59,7 @@ export default function Problems() {
           {problems.length > 0 ? (
             <>
               <section className="space-y-4">
-                <h2 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-purple-500">
+                <h2 className="text-2xl font-semibold text-[#2D2D2A]">
                   Submitted Problems
                 </h2>
                 <div className="space-y-4">
@@ -72,7 +72,7 @@ export default function Problems() {
               </section>
 
               <Button
-                className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-90 transition-opacity"
+                className="w-full bg-gradient-to-r from-[#7B9E82]/70 via-[#7B9E82] to-[#7B9E82]/70 hover:opacity-90 transition-opacity text-[#F2EEE3]"
                 onClick={generateSuggestions}
                 disabled={loadingSuggestions}
                 size="lg"
@@ -92,7 +92,7 @@ export default function Problems() {
 
               {suggestions.length > 0 && (
                 <section className="space-y-4">
-                  <h2 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
+                  <h2 className="text-2xl font-semibold text-[#2D2D2A]">
                     AI-Generated Project Ideas
                   </h2>
                   <div className="space-y-4">
@@ -107,11 +107,11 @@ export default function Problems() {
             </>
           ) : (
             <div className="text-center py-12">
-              <p className="text-gray-500 text-lg mb-6">
+              <p className="text-[#2D2D2A] text-lg mb-6">
                 No problems submitted yet
               </p>
               <Link href="/submit">
-                <Button className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:opacity-90">
+                <Button className="bg-gradient-to-r from-[#7B9E82]/80 via-[#7B9E82] to-[#7B9E82]/80 hover:opacity-90 text-[#F2EEE3]">
                   <PlusCircle className="mr-2 h-4 w-4" />
                   Submit Your First Problem
                 </Button>
