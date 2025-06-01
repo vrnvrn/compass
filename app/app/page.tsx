@@ -27,39 +27,55 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto space-y-6">
-          <Link href="/submit" className="block">
-            <Button
-              className="w-full bg-gradient-to-r from-[#7B9E82]/80 via-[#7B9E82] to-[#7B9E82]/80 hover:opacity-90 transition-opacity h-16 text-lg text-[#F2EEE3]"
-              size="lg"
-            >
-              <PlusCircle className="mr-2 h-5 w-5" />
-              Submit a Problem
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+        <div className="max-w-2xl mx-auto space-y-8">
+          {/* Stakeholder Section */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold text-[#2D2D2A] text-center">For Stakeholders</h2>
+            <p className="text-center text-[#2D2D2A]/80 mb-4">
+              Organizations and individuals with real-world problems to solve
+            </p>
+            <Link href="/submit" className="block">
+              <Button
+                className="w-full bg-gradient-to-r from-[#7B9E82]/80 via-[#7B9E82] to-[#7B9E82]/80 hover:opacity-90 transition-opacity h-16 text-lg text-[#F2EEE3]"
+                size="lg"
+              >
+                <PlusCircle className="mr-2 h-5 w-5" />
+                Submit a Problem
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          </div>
 
-          <Link href="/problems" className="block">
-            <Button
-              className="w-full bg-gradient-to-r from-[#7B9E82]/70 via-[#7B9E82]/90 to-[#7B9E82]/70 hover:opacity-90 transition-opacity h-16 text-lg text-[#F2EEE3]"
-              size="lg"
-            >
-              <ListChecks className="mr-2 h-5 w-5" />
-              View Problems
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+          {/* Builders Section */}
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold text-[#2D2D2A] text-center">For Builders</h2>
+            <p className="text-center text-[#2D2D2A]/80 mb-4">
+              Developers, designers, and innovators ready to create impact
+            </p>
+            <div className="space-y-4">
+              <Link href="/problems" className="block">
+                <Button
+                  className="w-full bg-gradient-to-r from-[#7B9E82]/70 via-[#7B9E82]/90 to-[#7B9E82]/70 hover:opacity-90 transition-opacity h-16 text-lg text-[#F2EEE3]"
+                  size="lg"
+                >
+                  <ListChecks className="mr-2 h-5 w-5" />
+                  View Problems
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
 
-          <Link href="/ideas" className="block">
-            <Button
-              className="w-full bg-gradient-to-r from-[#7B9E82]/70 via-[#7B9E82]/90 to-[#7B9E82]/70 hover:opacity-90 transition-opacity h-16 text-lg text-[#F2EEE3]"
-              size="lg"
-            >
-              <Sparkles className="mr-2 h-5 w-5" />
-              Project Ideas
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+              <Link href="/ideas" className="block">
+                <Button
+                  className="w-full bg-gradient-to-r from-[#7B9E82]/70 via-[#7B9E82]/90 to-[#7B9E82]/70 hover:opacity-90 transition-opacity h-16 text-lg text-[#F2EEE3]"
+                  size="lg"
+                >
+                  <Sparkles className="mr-2 h-5 w-5" />
+                  Project Ideas
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
 
           <div className="flex justify-center items-center gap-6 mt-8">
             <Link 
