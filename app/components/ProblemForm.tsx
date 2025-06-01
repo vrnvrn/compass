@@ -8,9 +8,16 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
-import { FormData, ProblemBrief } from '@/lib/types'
+import { FormData, ProblemBrief, PROBLEM_SCOPES, ISSUE_SPACES, URGENCY_LEVELS } from '@/lib/types'
 import { Shield, CheckCircle2, Loader2, Wand2 } from 'lucide-react'
 import { toast } from 'sonner'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 // Custom error class for better error handling
 class GenerationError extends Error {
@@ -25,6 +32,9 @@ const formSchema = z.object({
   description: z.string().min(1, 'Description is required'),
   email: z.string().email('Invalid email address'),
   emailVerified: z.boolean(),
+  scope: z.string().min(1, 'Scope is required'),
+  issueSpace: z.string().min(1, 'Issue space is required'),
+  urgency: z.string().min(1, 'Urgency level is required'),
 })
 
 interface ProblemFormProps {
@@ -40,6 +50,9 @@ export default function ProblemForm({ onSubmit }: ProblemFormProps) {
     resolver: zodResolver(formSchema),
     defaultValues: {
       emailVerified: false,
+      scope: PROBLEM_SCOPES[0],
+      issueSpace: ISSUE_SPACES[0],
+      urgency: URGENCY_LEVELS[1], // Default to 'Critical'
     },
   })
 
@@ -126,6 +139,9 @@ Format: Return only the description text, nothing else.`;
       description: data.description,
       email: data.email,
       verifiedDomain: email.split('@')[1],
+      scope: data.scope,
+      issueSpace: data.issueSpace,
+      urgency: data.urgency,
     }
     
     onSubmit(problem)
@@ -136,6 +152,9 @@ Format: Return only the description text, nothing else.`;
       description: '',
       email: '',
       emailVerified: false,
+      scope: PROBLEM_SCOPES[0],
+      issueSpace: ISSUE_SPACES[0],
+      urgency: URGENCY_LEVELS[1],
     })
     toast.success('Problem submitted successfully!')
   }
@@ -212,70 +231,113 @@ Format: Return only the description text, nothing else.`;
             )}
           </div>
 
-          <div className="space-y-3">
-            <div className="flex flex-col space-y-2">
-              <div className="relative">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Shield className="h-4 w-4 text-[#7B9E82]" />
-                </div>
-                <Input
-                  type="email"
-                  placeholder="Your Email"
-                  {...register('email')}
-                  className={`pl-9 bg-[#F2EEE3]/50 border-[#7B9E82]/20 focus:border-[#7B9E82] focus:ring-[#7B9E82]/20 ${
-                    errors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500/20' : ''
-                  } ${emailVerified ? 'pr-28' : ''}`}
-                />
-                {emailVerified && (
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-                    <span className="inline-flex items-center rounded-full bg-[#7B9E82]/10 px-2 py-1 text-xs font-medium text-[#7B9E82]">
-                      <CheckCircle2 className="mr-1 h-3 w-3" />
-                      Verified
-                    </span>
-                  </div>
-                )}
-              </div>
-              {errors.email && (
-                <p className="text-red-500 text-sm">{errors.email.message}</p>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            <div className="space-y-2">
+              <Select
+                value={watch('scope')}
+                onValueChange={(value) => setValue('scope', value)}
+              >
+                <SelectTrigger className="w-full bg-[#F2EEE3]/50">
+                  <SelectValue placeholder="Select scope" />
+                </SelectTrigger>
+                <SelectContent>
+                  {PROBLEM_SCOPES.map((s) => (
+                    <SelectItem key={s} value={s}>
+                      {s}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              {errors.scope && (
+                <p className="text-red-500 text-sm">{errors.scope.message}</p>
               )}
             </div>
 
-            {email && !emailVerified && (
-              <Button
-                type="button"
-                onClick={verifyEmail}
-                disabled={verifying}
-                className="w-full bg-gradient-to-r from-[#7B9E82]/80 via-[#7B9E82] to-[#7B9E82]/80 hover:opacity-90 transition-opacity text-[#F2EEE3]"
+            <div className="space-y-2">
+              <Select
+                value={watch('issueSpace')}
+                onValueChange={(value) => setValue('issueSpace', value)}
               >
-                {verifying ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Verifying with Vlayer... (simulated)
-                  </>
-                ) : (
-                  <>
-                    <Shield className="mr-2 h-4 w-4" />
-                    Verify Email with Vlayer (simulated)
-                  </>
-                )}
-              </Button>
-            )}
+                <SelectTrigger className="w-full bg-[#F2EEE3]/50">
+                  <SelectValue placeholder="Select issue space" />
+                </SelectTrigger>
+                <SelectContent>
+                  {ISSUE_SPACES.map((s) => (
+                    <SelectItem key={s} value={s}>
+                      {s}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              {errors.issueSpace && (
+                <p className="text-red-500 text-sm">{errors.issueSpace.message}</p>
+              )}
+            </div>
 
-            {emailVerified && (
-              <div className="rounded-lg bg-[#7B9E82]/10 px-3 py-2.5 text-sm text-[#7B9E82]">
-                <p className="flex items-center">
-                  <CheckCircle2 className="mr-2 h-4 w-4" />
-                  Email verified through Vlayer (simulated)
-                </p>
+            <div className="space-y-2">
+              <Select
+                value={watch('urgency')}
+                onValueChange={(value) => setValue('urgency', value)}
+              >
+                <SelectTrigger className="w-full bg-[#F2EEE3]/50">
+                  <SelectValue placeholder="Select urgency" />
+                </SelectTrigger>
+                <SelectContent>
+                  {URGENCY_LEVELS.map((u) => (
+                    <SelectItem key={u} value={u}>
+                      {u}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+              {errors.urgency && (
+                <p className="text-red-500 text-sm">{errors.urgency.message}</p>
+              )}
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <div className="relative">
+              <Input
+                type="email"
+                placeholder="Your Email"
+                {...register('email')}
+                className={`bg-[#F2EEE3]/50 border-[#7B9E82]/20 focus:border-[#7B9E82] focus:ring-[#7B9E82]/20 ${
+                  errors.email ? 'border-red-300 focus:border-red-500 focus:ring-red-500/20' : ''
+                } pr-[100px]`}
+              />
+              <div className="absolute right-2 top-1/2 -translate-y-1/2">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="sm"
+                  onClick={verifyEmail}
+                  disabled={!email || verifying || emailVerified}
+                  className={`h-7 px-2 ${
+                    emailVerified
+                      ? 'text-[#7B9E82]'
+                      : 'text-[#2D2D2A] hover:text-[#7B9E82]'
+                  }`}
+                >
+                  {emailVerified ? (
+                    <CheckCircle2 className="h-4 w-4" />
+                  ) : verifying ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Shield className="h-4 w-4" />
+                  )}
+                </Button>
               </div>
+            </div>
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email.message}</p>
             )}
           </div>
 
-          <Button 
-            type="submit" 
-            className="w-full bg-gradient-to-r from-[#7B9E82]/70 via-[#7B9E82] to-[#7B9E82]/70 hover:opacity-90 transition-opacity text-[#F2EEE3]"
+          <Button
+            type="submit"
             disabled={!emailVerified}
-            size="lg"
+            className="w-full bg-gradient-to-r from-[#7B9E82]/80 via-[#7B9E82] to-[#7B9E82]/80 hover:opacity-90 text-[#F2EEE3]"
           >
             Submit Problem
           </Button>
