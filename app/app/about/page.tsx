@@ -24,7 +24,7 @@ export default function About() {
 
           <div className="text-[#2D2D2A] space-y-6">
             <p>
-              Compass is a platform designed to reorient global hackathons toward grounded, collective impact by connecting local community stakeholders and their needs with builders, funders, and organizers. Through a system of verified issue-sourcing, Compass enables communities —especially those historically excluded from innovation spaces— to articulate concrete problems they face. These needs are translated into actionable prompts and integrated into the hackathon's unique workflow as complements to bounties, featured challenges, or curated tracks, compatible with existing parameters on the organizer's side, and as hackathon ideas on the builder's side.
+              Compass is a platform designed to reorient global hackathons toward grounded, collective impact by connecting local community stakeholders and their needs with builders, funders, and organizers. Through a system of verified issue-sourcing, Compass enables communities to articulate concrete problems they face. These needs are translated into actionable prompts and integrated into the hackathon's unique workflow as complements to bounties, featured challenges, or curated tracks, compatible with existing parameters on the organizer's side, and as hackathon ideas on the builder's side.
             </p>
 
             <p>
