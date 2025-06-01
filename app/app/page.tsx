@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, PlusCircle, ListChecks } from 'lucide-react'
+import { ArrowRight, PlusCircle, ListChecks, Sparkles } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -45,7 +45,18 @@ export default function Home() {
               size="lg"
             >
               <ListChecks className="mr-2 h-5 w-5" />
-              View Problems & Solutions
+              View Problems
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+
+          <Link href="/ideas" className="block">
+            <Button
+              className="w-full bg-gradient-to-r from-[#7B9E82]/70 via-[#7B9E82]/90 to-[#7B9E82]/70 hover:opacity-90 transition-opacity h-16 text-lg text-[#F2EEE3]"
+              size="lg"
+            >
+              <Sparkles className="mr-2 h-5 w-5" />
+              Project Ideas
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
