@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, PlusCircle, ListChecks } from 'lucide-react'
 
@@ -9,12 +10,20 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/images/compass-logo.png"
+              alt="Compass Logo"
+              width={400}
+              height={400}
+              priority
+            />
+          </div>
           <h1 className="text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 mb-4">
-            Building Local Impact
+            Compass
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Hackathons drive innovation, strengthen communities, and create solutions for local needs. 
-            Join us in building a better future through technology.
+          Reorienting global hackathons toward grounded, collective impact.
           </p>
         </div>
 
