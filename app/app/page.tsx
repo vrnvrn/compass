@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, PlusCircle, ListChecks, Sparkles, Github } from 'lucide-react'
+import { ArrowRight, PlusCircle, ListChecks, Sparkles, Github, Presentation, Users } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -74,6 +74,20 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <Github className="h-8 w-8 text-[#2D2D2A] hover:text-[#7B9E82] transition-colors" />
+            </a>
+            <a 
+              href="https://www.canva.com/design/DAGpA7CIkkI/pwE_ue6ab69tMFyLTodhaQ/view?utm_content=DAGpA7CIkkI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfdc6cb2884" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Presentation className="h-8 w-8 text-[#2D2D2A] hover:text-[#7B9E82] transition-colors" />
+            </a>
+            <a 
+              href="https://github.com/vrnvrn/compass/graphs/contributors" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Users className="h-8 w-8 text-[#2D2D2A] hover:text-[#7B9E82] transition-colors" />
             </a>
           </div>
         </div>
