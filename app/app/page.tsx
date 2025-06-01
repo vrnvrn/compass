@@ -61,14 +61,21 @@ export default function Home() {
             </Button>
           </Link>
 
-          <a 
-            href="https://github.com/vrnvrn/compass" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="flex justify-center mt-8"
-          >
-            <Github className="h-8 w-8 text-[#2D2D2A] hover:text-[#7B9E82] transition-colors" />
-          </a>
+          <div className="flex justify-center items-center gap-6 mt-8">
+            <Link 
+              href="/about"
+              className="text-[#2D2D2A] hover:text-[#7B9E82] transition-colors text-lg"
+            >
+              About
+            </Link>
+            <a 
+              href="https://github.com/vrnvrn/compass" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <Github className="h-8 w-8 text-[#2D2D2A] hover:text-[#7B9E82] transition-colors" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
