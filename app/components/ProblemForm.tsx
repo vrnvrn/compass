@@ -250,12 +250,12 @@ Format: Return only the description text, nothing else.`;
                 {verifying ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Verifying with Vlayer...
+                    Verifying with Vlayer... (simulated)
                   </>
                 ) : (
                   <>
                     <Shield className="mr-2 h-4 w-4" />
-                    Verify Email with Vlayer
+                    Verify Email with Vlayer (simulated)
                   </>
                 )}
               </Button>
@@ -265,7 +265,7 @@ Format: Return only the description text, nothing else.`;
               <div className="rounded-lg bg-gradient-to-r from-emerald-50 to-teal-50 px-3 py-2.5 text-sm text-emerald-700">
                 <p className="flex items-center">
                   <CheckCircle2 className="mr-2 h-4 w-4" />
-                  Email verified through Vlayer
+                  Email verified through Vlayer (simulated)
                 </p>
               </div>
             )}
